@@ -26,3 +26,7 @@ class RunInput(BaseModel):
  name:str=Field(min_length=2,max_length=120)
  mapping_id:int
 class RestoreInput(BaseModel):backup:dict
+class HandoverInput(BaseModel):
+ request_id:str=Field(min_length=8,max_length=128)
+ batch_id:int
+ to_lab_id:int

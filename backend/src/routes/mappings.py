@@ -5,7 +5,7 @@ from src.services import mappings
 from src.controllers.business import save_mapping
 router=APIRouter()
 @router.get('/mappings')
-def listing(u=Depends(current)):return mappings.list_items()
+def listing(u=Depends(current)):return mappings.list_items(u)
 @router.post('/mappings')
 def create(data:MappingInput,u=Depends(writer)):return save_mapping(data,u)
 @router.put('/mappings/{item_id}')
